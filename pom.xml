@@ -1,25 +1,28 @@
-import java.sql.*;
-
-class MysqlCon {
-
-	private static final String jdbcURL = "jdbc:mysql://localhost:3306/demo?autoReconnect=true&useSSL=false";
-	private static final String jdbcUsername = "root";
-	private static final String jdbcPassword = "cld7002s3cr3T";
-
-	public static void main(String args[]) {
-
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("Driver loaded! Connecting as "+jdbcURL+" "+jdbcUsername+" "+jdbcPassword);
-			Connection con = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from users");
-			while (rs.next())
-				System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
-			con.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
-}
-© 2021 GitHub, Inc.
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>MySQLCon</groupId>
+	<artifactId>MySQLCon</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<!-- https://mvnbuild.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>12</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
