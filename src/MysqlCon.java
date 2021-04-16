@@ -22,4 +22,3 @@ class MysqlCon {
 		}
 	}
 }
-© 2021 GitHub, Inc.
