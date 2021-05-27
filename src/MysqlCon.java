@@ -2,9 +2,9 @@ import java.sql.*;
 
 class MysqlCon {
 
-	private static final String jdbcURL = "jdbc:mysql://localhost:3306/demo?autoReconnect=true&useSSL=false";
-	private static final String jdbcUsername = "root";
-	private static final String jdbcPassword = "cld7002s3cr3T";
+	private static final String jdbcURL = "jdbc:mysql://localhost:3306/crm?autoReconnect=true&useSSL=false";
+	private static final String jdbcUsername = "remoteuser";
+	private static final String jdbcPassword = "crms3cr3T";
 
 	public static void main(String args[]) {
 
